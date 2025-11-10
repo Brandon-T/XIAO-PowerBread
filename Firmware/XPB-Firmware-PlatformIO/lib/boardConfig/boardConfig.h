@@ -13,6 +13,17 @@
 #define pin_i2c_sda D4 //D4
 #define pin_i2c_scl D5 //D5
 
+#elif defined(ESP32_S3_SUPERMINI)
+#define pin_dial 1 //D2 (GPIO1)
+#define pin_lcd_sclk 11 //D8 (GPIO11)
+#define pin_lcd_miso -1 //D9 (GPIO12)
+#define pin_lcd_mosi 13 //D10 (GPIO13)
+#define pin_lcd_dc 12 //D9 (GPIO12)
+#define pin_lcd_cs -1 //-1
+#define pin_lcd_rst 4 //D3 (GPIO4)
+#define pin_i2c_sda 5 //D4 (GPIO5)
+#define pin_i2c_scl 6 //D5 (GPIO6)
+
 #elif defined(SEEED_XIAO_ESP32C6)
 #define pin_dial D2 //D2
 #define pin_lcd_sclk D8 //D8
@@ -53,7 +64,7 @@
 /* End of Pin definition */
 
 /* freeRTS dependency for each board */
-#if defined(SEEED_XIAO_ESP32C3) || defined(SEEED_XIAO_ESP32S3) || defined(SEEED_XIAO_ESP32C6)
+#if defined(SEEED_XIAO_ESP32C3) || defined(SEEED_XIAO_ESP32S3) || defined(SEEED_XIAO_ESP32C6) || defined(ESP32_S3_SUPERMINI)
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/semphr.h"

@@ -26,7 +26,7 @@ int DialFunction::readDialStatus() {
         int dial_threshold_press = 50;     // press ~116
         int dial_threshold_up = 300;       // up ~348
         int dial_threshold_max = 400;
-    #elif defined(SEEED_XIAO_ESP32C3) || defined(SEEED_XIAO_ESP32S3)
+    #elif defined(SEEED_XIAO_ESP32C3) || defined(SEEED_XIAO_ESP32S3) || defined(ESP32_S3_SUPERMINI)
         /*
          * Dial Analog Value Table on XIAO ESP32-C3 or XIAO ESP32-S3
          * ----------------------
@@ -38,7 +38,7 @@ int DialFunction::readDialStatus() {
          */
         int dial_threshold_min = 0;
         int dial_threshold_down = 200;      // down ~282
-        int dial_threshold_press = 100;     // press ~159  
+        int dial_threshold_press = 100;     // press ~159
         int dial_threshold_up = 350;        // up ~490
         int dial_threshold_max = 600;
     #elif defined(SEEED_XIAO_RP2040) || defined(SEEED_XIAO_RP2350)

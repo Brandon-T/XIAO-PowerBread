@@ -152,6 +152,11 @@ float avgS[2] = {0}, avgM[2] = {0}, avgH[2] = {0}, peak[2] = {0}; // Average val
 #define STACK_SIZE_SERIAL 4096
 #define STACK_SIZE_DIAL 4096
 #define STACK_SIZE_SENSOR 4096
+#elif defined(ESP32_S3_SUPERMINI)
+#define STACK_SIZE_UI 4096
+#define STACK_SIZE_SERIAL 4096
+#define STACK_SIZE_DIAL 4096
+#define STACK_SIZE_SENSOR 4096
 #elif defined(SEEED_XIAO_RP2040) || defined(SEEED_XIAO_RP2350)
 #define STACK_SIZE_UI 2048
 #define STACK_SIZE_SERIAL 1024
@@ -405,6 +410,6 @@ void vApplicationTickHook(void)
     // it use for checking task states when debugging
 }
 
-#elif defined(SEEED_XIAO_ESP32C3) || defined(SEEED_XIAO_ESP32S3) || defined(SEEED_XIAO_ESP32C6)
+#elif defined(SEEED_XIAO_ESP32C3) || defined(SEEED_XIAO_ESP32S3) || defined(SEEED_XIAO_ESP32C6) || defined(ESP32_S3_SUPERMINI)
 //no need for these hooks on ESP32 series
 #endif

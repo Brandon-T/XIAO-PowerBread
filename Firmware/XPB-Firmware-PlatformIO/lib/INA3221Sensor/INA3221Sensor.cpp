@@ -10,6 +10,8 @@ INA3221Sensor::INA3221Sensor(uint8_t address)
   : ina(address, &Wire1) {
 #elif defined(SEEED_XIAO_RP2350)
   : ina(address, &Wire1) {
+#elif defined(ESP32_S3_SUPERMINI)
+  : ina(address, &Wire) {
 #else
   : ina(address, &Wire) {
 #endif
@@ -32,7 +34,7 @@ bool INA3221Sensor::begin() {
     // Wire.setSCL(pin_i2c_scl);
     Wire.setClock(400000); // Set I2C to 400KHz
     Wire.begin();
-  #elif defined(SEEED_XIAO_ESP32S3)
+  #elif defined(SEEED_XIAO_ESP32S3) || defined(ESP32_S3_SUPERMINI)
     Wire.begin(pin_i2c_sda, pin_i2c_scl, 400000);
   #endif
 

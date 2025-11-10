@@ -20,7 +20,7 @@ class LGFX : public lgfx::LGFX_Device
       cfg.spi_host   = 0;
       #elif defined(SEEED_XIAO_ESP32C3) || defined(SEEED_XIAO_ESP32C6)
       cfg.spi_host   = SPI2_HOST;
-      #elif defined(SEEED_XIAO_ESP32S3)
+      #elif defined(SEEED_XIAO_ESP32S3) || defined(ESP32_S3_SUPERMINI)
       cfg.spi_host   = SPI2_HOST;
       #endif
       cfg.spi_mode   = 0;
